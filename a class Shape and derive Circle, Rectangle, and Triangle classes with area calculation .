@@ -1,0 +1,60 @@
+abstract class Shape {
+    
+    abstract double area();
+}
+
+
+class Circle extends Shape {
+    double radius;
+
+    Circle(double radius) {
+        this.radius = radius;
+    }
+
+  
+    double area() {
+        return Math.PI * radius * radius;
+    }
+}
+
+
+class Rectangle extends Shape {
+    double width, height;
+
+    Rectangle(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+
+  
+    double area() {
+        return width * height;
+    }
+}
+
+class Triangle extends Shape {
+    double base, height;
+
+    Triangle(double base, double height) {
+        this.base = base;
+        this.height = height;
+    }
+
+    
+    double area() {
+        return 0.5 * base * height;
+    }
+}
+
+
+public class ShapeDemo {
+    public static void main(String[] args) {
+        Shape circle = new Circle(5);
+        Shape rectangle = new Rectangle(4, 6);
+        Shape triangle = new Triangle(3, 7);
+
+        System.out.printf("Circle area: %.2f\n", circle.area());
+        System.out.printf("Rectangle area: %.2f\n", rectangle.area());
+        System.out.printf("Triangle area: %.2f\n", triangle.area());
+    }
+}
